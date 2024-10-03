@@ -1,0 +1,91 @@
+/*=== Marquee Section One =========================*/
+.marquee-section {
+    position: relative;
+    background: #222222;
+    padding: 55px 0;
+}
+
+.marquee {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    gap: var(--gap);
+    --gap: 0px;
+
+    .marquee-group {
+        --border-black: rgba(255, 255, 255, 0.3);
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        gap: var(--gap);
+        --duration: 30s;
+        min-width: 100%;
+        -webkit-animation: scroll var(--duration) linear infinite;
+        animation: scroll var(--duration) linear infinite;
+        color: #222222;
+        text-shadow: -1px -1px 0 var(--border-black), 1px -1px 0 var(--border-black), -1px 1px 0 var(--border-black), 1px 1px 0 var(--border-black);
+
+        .text {
+            display: inline;
+            font-size: 100px;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            padding-left: 50px;
+            color: #222222;
+            @include lg{
+                font-size: 50px;
+            }
+        }
+
+        .text.active {
+            opacity: 0.302;
+            color: $white-color;
+        }
+    }
+
+    &:hover {
+        .marquee-group {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+    }
+}
+
+/*== Marque Section Two ==*/
+.marquee-section.style-2 {
+    position: relative;
+    background: $theme-color;
+    padding: 30px 0;
+    margin: 20px;
+
+    .marquee {
+        .marquee-group {
+            text-shadow: -1px -1px 0 $white-color, 1px -1px 0 $white-color, -1px 1px 0 $white-color, 1px 1px 0 $white-color;
+
+            .text {
+                font-size: 76px;
+                font-weight: 800;
+                color: $theme-color;
+            }
+
+            .text.active {
+                opacity: 1;
+                color: $white-color;
+            }
+        }
+    }
+}

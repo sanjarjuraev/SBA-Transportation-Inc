@@ -1,0 +1,160 @@
+/*==========Sec Title============*/
+.sec-title {
+    position: relative;
+    margin-bottom: calc(var(--section-title-space) - 15px);
+
+    @include md {
+        --section-title-space: 60px;
+    }
+
+    @include sm {
+        --section-title-space: 55px;
+    }
+}
+
+
+
+.sec-title h1 {
+    position: relative;
+    font-size: 60px;
+    line-height: 1em;
+    color: $black-color;
+    font-family: $title-font;
+    font-weight: 700;
+}
+
+.sec-title {
+    h2 {
+        position: relative;
+        color: $black-color;
+        font-size: 46px;
+        font-family: $title-font;
+        font-weight: 700;
+        letter-spacing: .02em;
+        margin-bottom: 0;
+
+        @include ml {
+            font-size: 40px;
+            line-height: 1.2em;
+        }
+
+        @include lg {
+            font-size: 38px;
+            line-height: 1.2em;
+        }
+
+        @include laptop-l {
+            font-size: 32px;
+        }
+
+        @include tablet-l {
+            font-size: 30px;
+            letter-spacing: normal;
+        }
+
+        @include mobile-xl {
+            font-size: 28px;
+        }
+
+        @include mobile-l {
+            font-size: 24px;
+        }
+
+        @include xs {
+            & br {
+                display: none;
+            }
+        }
+    }
+
+    .text {
+        margin-top: 15px;
+
+        @include xs {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &.two {
+        h2 {
+            padding-left: 25px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                width: 5px;
+                height: 80%;
+                background: $theme-color;
+            }
+        }
+
+
+        .text {
+            margin-top: 10px;
+        }
+
+    }
+}
+
+
+
+.sec-title h3 {
+    font-size: 32px
+}
+
+.sec-text {
+    margin-top: 11px;
+    font-weight: 400;
+    font-size: 16px;
+    padding-bottom: 10px;
+
+    @include lg {
+        margin-top: 8px;
+    }
+
+    @include sm {
+        br {
+            display: none;
+        }
+    }
+}
+
+.sec-title.light h3,
+.sec-title.light h2,
+.sec-title.light .sec-text,
+.sec-title.light h1 {
+    color: $white-color;
+}
+
+.sec-title.light .sub-title {
+    color: $theme-color;
+}
+
+.sec-title.text-center h2:before {
+    left: 50%;
+    margin-left: -30px
+}
+
+.sec-title .sub-title {
+    position: relative;
+    color: $theme-color;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    font-family: $title-font;
+    top: -5px;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include lg {
+        margin-bottom: 5px;
+    }
+}

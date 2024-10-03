@@ -1,0 +1,376 @@
+/*=== Team Section One=================*/
+.team-section {
+    position: relative;
+    z-index: 2;
+
+    .team-button {
+        text-align: right;
+        margin-top: 40px;
+    }
+}
+
+.team-block {
+    position: relative;
+
+    .inner-box {
+        position: relative;
+        overflow: hidden;
+
+        .image {
+            width: 100%;
+            z-index: 1;
+            margin-bottom: 0;
+
+            a {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                grid-area: overlap;
+                clip-path: inset(0 0 0 0);
+                -webkit-clip-path: inset(0 0 0 0);
+                transition: -webkit-clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97);
+                -webkit-transition: -webkit-clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97);
+                -o-transition: clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97);
+                transition: clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97);
+                transition: clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97), -webkit-clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97);
+                transition: clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97), -webkit-clip-path 0.6s cubic-bezier(0.57, 0.57, 0, 0.97);
+                z-index: 1;
+            }
+        }
+
+        .content {
+            padding-left: 40px;
+        }
+
+        .team-info {
+            position: relative;
+            z-index: 1;
+            background: $white-color;
+            padding: 30px 15px 22px 30px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                bottom: 0;
+                width: 5px;
+                height: 100%;
+                background: $theme-color;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+
+            h4 {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 7px;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+
+            span {
+                position: relative;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+        }
+
+        .social-list {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            bottom: -40px;
+            width: 20%;
+            height: 100%;
+            background-color: $theme-color;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .social-icon-two {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            z-index: 1;
+            -webkit-transition: all 600ms ease;
+            -o-transition: all 600ms ease;
+            transition: all 600ms ease;
+            margin-top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+
+            li {
+                margin-bottom: 10px;
+                margin-left: 0;
+            }
+        }
+
+        .shape {
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                bottom: -1px;
+                right: -1px;
+                width: 50px;
+                height: 50px;
+                background: #f75159;
+                aspect-ratio: 1;
+                -webkit-clip-path: polygon(0 100%, 50% 50%, 100% 0);
+                clip-path: polygon(0 100%, 50% 50%, 100% 0);
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                bottom: -1px;
+                right: -1px;
+                width: 50px;
+                height: 50px;
+                background: #f75159;
+                aspect-ratio: 1;
+                -webkit-clip-path: polygon(0 100%, 50% 50%, 100% 0);
+                clip-path: polygon(0 100%, 50% 50%, 100% 0);
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+        }
+    }
+
+    .image {
+        img {
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        .inner-box {
+            .team-info {
+                &::before {
+                    width: 100%;
+                }
+
+                span {
+                    color: $white-color;
+                }
+
+                h4 {
+                    color: $white-color;
+                }
+            }
+
+            .shape {
+                &::before {
+                    -webkit-clip-path: polygon(0 100%, 0 0, 100% 0);
+                    clip-path: polygon(0 100%, 0 0, 100% 0);
+                }
+
+                &::after {
+                    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0);
+                    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+                    background: $gray-color;
+                }
+            }
+
+            .social-list {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .image {
+            a {
+                clip-path: inset(0 17% 0 0);
+                -webkit-clip-path: inset(0 17% 0 0);
+            }
+        }
+    }
+}
+
+/*== Inner Page Team Section ==*/
+.team-block-two {
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+
+    .image {
+        a {
+            position: relative;
+            display: block;
+        }
+
+        img {
+            width: 100%;
+            @include transition;
+        }
+    }
+
+    &:hover {
+        .image {
+            img {
+                filter: brightness(0.5);
+            }
+        }
+
+        .inner-box {
+            .content {
+                transform: translateY(-30px);
+            }
+        }
+    }
+
+    .inner-box {
+        .content {
+            position: relative;
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+
+            .inner {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 0 30px;
+            }
+        }
+
+        .team-info {
+            background: $white-color;
+            padding: 30px 20px 22px 40px;
+            border-left: 5px solid $theme-color;
+
+            @media (min-width:1024px) and (max-width:1280px) {
+                padding: 30px 20px 22px 22px;
+            }
+
+            h4 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 7px;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+
+            span {
+                position: relative;
+                -webkit-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+        }
+    }
+}
+
+.team-share {
+    position: absolute;
+    right: 30px;
+    bottom: 111px;
+    z-index: 5;
+}
+
+.team-share-icon {
+    span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: $theme-color;
+        color: $white-color;
+        text-align: center;
+        font-size: 16px;
+
+        &:hover {
+            color: $white-color;
+            cursor: pointer;
+        }
+    }
+}
+
+.team-social-icon {
+    position: relative;
+
+    li {
+        a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            background-color: $white-color;
+            text-align: center;
+            color: $black-color;
+            opacity: 0;
+            visibility: hidden;
+            font-size: 15px;
+            -webkit-transition: all 500ms ease;
+            transition: all 500ms ease;
+
+            &:hover {
+                background-color: $yellow-color;
+            }
+        }
+
+        &:nth-child(1) {
+            a {
+                transition-delay: 0.6s;
+            }
+        }
+
+        &:nth-child(2) {
+            a {
+                transition-delay: 0.4s;
+            }
+        }
+
+        &:nth-child(3) {
+            a {
+                transition-delay: 0.3s;
+            }
+        }
+
+        &:nth-child(4) {
+            a {
+                transition-delay: 0.2s;
+            }
+        }
+    }
+}
+
+.team-share.active {
+    .team-social-icon {
+        li {
+            a {
+                opacity: 1;
+                overflow: hidden;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+@include md {
+    .team-section {
+        .team-button {
+            margin-top: 0;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+    }
+}

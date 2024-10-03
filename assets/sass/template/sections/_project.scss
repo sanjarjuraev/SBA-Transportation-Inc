@@ -1,0 +1,726 @@
+// Projects Section One
+.projects-section {
+    position: relative;
+    background: $white-color;
+    z-index: 3;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 23%;
+        height: 100%;
+        background: $gray-color;
+    }
+
+    .owl-nav {
+        position: absolute;
+        right: -70px;
+        top: 50%;
+        width: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        gap: 10px;
+
+        @include xxl {
+            right: 0;
+        }
+
+        button {
+            display: inline-block;
+            border-radius: 0;
+            width: 50px;
+            height: 50px;
+            color: $white-color !important;
+            background: $theme-color !important;
+        }
+
+        button.owl-prev {
+            background: $black-color !important;
+        }
+    }
+}
+
+.project-block {
+    position: relative;
+
+    .inner-box {
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            content: '';
+            z-index: 1;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(23, 23, 23, 0.6)), color-stop(20%, rgba(23, 23, 23, 0.6)), color-stop(50%, rgba(23, 23, 23, 0)), to(rgba(23, 23, 23, 0)));
+            background-image: -o-linear-gradient(bottom, rgba(23, 23, 23, 0.6) 0%, rgba(23, 23, 23, 0.6) 20%, rgba(23, 23, 23, 0) 50%, rgba(23, 23, 23, 0) 100%);
+            background-image: linear-gradient(0deg, rgba(23, 23, 23, 0.6) 0%, rgba(23, 23, 23, 0.6) 20%, rgba(23, 23, 23, 0) 50%, rgba(23, 23, 23, 0) 100%);
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .image-box {
+                .image {
+                    a {
+                        &::after {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .content-box {
+                &::before {
+                    left: -80px;
+                    opacity: 1;
+                    visibility: visible;
+
+                    @include nestHub {
+                        left: 0;
+                    }
+
+                    @include vxs {
+                        left: -84px;
+                    }
+
+                    @include mobile-s {
+                        left: 0;
+                    }
+                }
+
+                .title-box {
+                    &::before {
+                        background: $theme-color;
+                    }
+                }
+
+                .cat {
+                    color: $theme-color;
+                    font-weight: 500;
+                }
+
+                .icon {
+                    top: 50%;
+                    opacity: 1;
+                    -webkit-transform: translate(0, -50%);
+                    -ms-transform: translate(0, -50%);
+                    transform: translate(0, -50%);
+                    -webkit-transition-delay: 300ms;
+                    -o-transition-delay: 300ms;
+                    transition-delay: 300ms;
+                }
+            }
+
+            .image {
+                img {
+                    -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .image-box {
+        position: relative;
+        overflow: hidden;
+        -webkit-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+
+        .image {
+            position: relative;
+            margin-bottom: 0;
+
+            a {
+                display: block;
+                width: 100%;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    z-index: 1;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 0;
+                    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(247, 197, 0, 0.9999999999999999)), to(rgba(247, 197, 0, 0)));
+                    background-image: -o-linear-gradient(bottom, rgba(247, 197, 0, 0.9999999999999999) 0%, rgba(247, 197, 0, 0) 100%);
+                    background-image: linear-gradient(0deg, rgba(247, 197, 0, 0.9999999999999999) 0%, rgba(247, 197, 0, 0) 100%);
+                    -webkit-transition: all 300ms ease;
+                    -o-transition: all 300ms ease;
+                    transition: all 300ms ease;
+                }
+            }
+
+            img {
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+                width: 100%;
+                height: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .content-box {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 31px 108px 33px;
+        padding-left: 35px;
+        z-index: 3;
+        max-width: 400px;
+        width: 100%;
+        min-height: 120px;
+        -webkit-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+
+        @include md {
+            padding: 31px 60px 33px;
+            padding-left: 35px;
+        }
+
+        @include nestHub {
+            padding: 31px 48px 33px;
+            padding-left: 20px;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            left: -140px;
+            width: 410px;
+            content: "";
+            transform: skew(22deg);
+            background-color: $black-color;
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+            opacity: 0;
+            visibility: hidden;
+
+            @include nestHub {
+                left: 0;
+                width: 100%;
+                transform: skew(0);
+            }
+
+            @include mobile-s {
+                left: 0;
+                width: 100%;
+                transform: skew(0);
+            }
+        }
+
+        .title-box {
+            position: relative;
+            padding-left: 18px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 50%;
+                width: 3px;
+                height: 90%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background: $yellow-color;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 30%;
+            right: 0;
+            height: 48px;
+            width: 48px;
+            font-size: 16px;
+            color: $white-color;
+            background-color: $theme-color;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            border-radius: 50%;
+            opacity: 0;
+            -webkit-transform: translateY(-20px);
+            -ms-transform: translateY(-20px);
+            transform: translateY(-20px);
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .cat {
+            position: relative;
+            font-size: 14px;
+            line-height: 15px;
+            color: $yellow-color;
+            display: block;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .title {
+            font-size: 22px;
+            line-height: 28px;
+            font-weight: 500;
+            color: $white-color;
+            margin-bottom: 0;
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+    }
+}
+
+@media only screen and (max-width: 1062px) {
+    .projects-section {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .project-block {
+        .content-box {
+            .title {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1408.99px) {
+    .projects-section {
+        .owl-nav {
+            button {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/*== Projects Section Two ==*/
+.projects-section.style-2 {
+    position: relative;
+    background: transparent;
+
+    &::before {
+        display: none;
+    }
+
+    .sec-title {
+        margin-bottom: 70px;
+
+        @include md {
+            margin-bottom: 0;
+        }
+    }
+
+    .sec-right {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-top: 22px;
+
+        @include md {
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .text {
+            font-size: 16px;
+
+            @include md {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .owl-nav {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+        transform: translate(0);
+        right: 0;
+
+        @include vxs {
+            position: absolute;
+            left: 0;
+            top: 300px;
+            z-index: 2;
+        }
+
+        button {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            color: $white-color !important;
+            background: $theme-color !important;
+
+            @include vxs {
+                border-radius: 50%;
+            }
+
+            &.owl-prev {
+                background: $black-color !important;
+            }
+        }
+    }
+}
+
+.projects-carousel2 .owl-stage-outer {
+    display: inline-block;
+
+    @include ml {
+        display: inherit;
+    }
+}
+
+
+/*===== Inner Page Project Details ===================*/
+.project-details__content-left {
+    .title {
+        margin-top: 28px;
+    }
+
+    p {
+        font-size: 16px;
+
+        @include sm {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.project-quote {
+    padding: 30px 30px;
+    background: $gray-color;
+    margin: 28px 0 65px;
+
+    @include md {
+        margin: 28px 0;
+    }
+
+    @include xs{
+        padding: 20px;
+    }
+
+    .quote-icon {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        background: $theme-color;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 20px;
+        float: left;
+        margin-top: -7px;
+
+        @include xs {
+            float: inherit;
+            margin: 0 0 20px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 500;
+        color: $black-color;
+    }
+}
+
+.featured-list-box {
+    padding: 10px 0 32px;
+
+    @include sm {
+        padding: 10px 0 25px;
+    }
+
+    .details-image {
+        @include sm {
+            .img-1 {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.featured-list {
+    .list-style-2 {
+        li {
+            color: $body-color;
+            font-weight: 400;
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.project-sidebar {
+    margin-top: -50px;
+    position: relative;
+    display: block;
+    max-width: 375px;
+    width: 100%;
+
+    @include md {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+}
+
+.sidebar-widget .widget-box.project-info-box {
+    background-color: $black-color;
+    border-top: 5px solid $theme-color;
+    padding-top: 26px;
+
+    .title {
+        color: $white-color;
+        text-align: center;
+        padding: 0 0 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 40px;
+    }
+}
+
+.sidebar-project-list {
+    li {
+        display: block;
+        padding: 14px 20px;
+        color: $white-color;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-bottom: 10px;
+
+        span {
+            color: $light-color;
+            margin-left: 4px;
+        }
+    }
+}
+
+.project-details__tag-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 30px;
+
+    .tags {
+        display: flex;
+        gap: 10px;
+
+        strong {
+            color: $black-color;
+        }
+
+        @include xs {
+            flex-direction: column;
+        }
+    }
+}
+
+.project-details__tags {
+    li {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 3px 20px;
+        background: $gray-color;
+        margin-right: 6px;
+        cursor: pointer;
+        -webkit-transition: all 300ms ease;
+        transition: all 300ms ease;
+
+        &:hover {
+            color: $white-color;
+            background: $theme-color;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    li.current {
+        color: $white-color;
+        background: $theme-color;
+    }
+}
+
+.project-share-icon {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 50%;
+
+    .team-share {
+        right: 0;
+        bottom: 0;
+    }
+
+    .team-share-icon span {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 50%;
+        background-color: $black-color;
+    }
+
+    .team-social-icon li a {
+        background-color: $theme-color;
+        color: $white-color;
+    }
+}
+
+.project-details__pagination-box {
+    position: relative;
+    display: block;
+    text-align: center;
+    border-top: 1px solid #ece9e0;
+    padding: 35px 0 85px;
+
+    @include md {
+        padding: 35px 0 40px;
+    }
+}
+
+.project-details__pagination {
+    position: relative;
+    display: block;
+
+    li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        a {
+            font-size: 16px;
+            color: $black-color;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            -webkit-transition: all 500ms ease;
+            transition: all 500ms ease;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+
+        .content {
+            position: relative;
+            display: block;
+        }
+    }
+
+    li.next {
+        float: left;
+        position: relative;
+
+        i {
+            margin-right: 10px;
+        }
+
+        .content {
+            text-align: left;
+        }
+    }
+
+    li.previous {
+        position: relative;
+        float: right;
+
+        i {
+            margin-left: 10px;
+        }
+
+        .content {
+            text-align: right;
+        }
+    }
+}
+
+.projects-section.inner-page {
+    &::before {
+        display: none;
+    }
+
+    .default-dots {
+        .owl-dots {
+            .owl-dot {
+                height: 5px;
+                width: 20px;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 437px) {
+    .project-share-icon {
+        margin-bottom: 5px;
+    }
+
+    .project-details__tag-box {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+
+    .project-details__tags {
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}

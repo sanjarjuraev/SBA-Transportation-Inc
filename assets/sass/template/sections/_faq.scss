@@ -1,0 +1,89 @@
+/* Accordin =====*/
+.accordion-box {
+    position: relative;
+
+    .block {
+        position: relative;
+        background-color: $white-color;
+        margin-bottom: 10px;
+
+        .acc-btn {
+            position: relative;
+            font-size: 18px;
+            line-height: 30px;
+            color: $black-color;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 18px 30px;
+            padding-right: 50px;
+            background: $white-color;
+            -webkit-filter: drop-shadow(0 0 25px rgba(155, 155, 155, 0.2));
+            filter: drop-shadow(0 0 25px rgba(155, 155, 155, 0.2));
+            -webkit-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+
+            .icon {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                -webkit-transform: translateY(-50%)rotate(0deg);
+                -ms-transform: translateY(-50%)rotate(0deg);
+                transform: translateY(-50%)rotate(0deg);
+                height: 24px;
+                width: 24px;
+                font-size: 12px;
+                line-height: 24px;
+                border-radius: 50%;
+                text-align: center;
+                color: $white-color;
+                background: $theme-color;
+                -webkit-transition: all 500ms ease;
+                -o-transition: all 500ms ease;
+                transition: all 500ms ease;
+            }
+        }
+
+        .acc-btn.active {
+            color: $theme-color;
+            -webkit-filter: none;
+            filter: none;
+
+            .icon {
+                color: $white-color;
+                -webkit-transform: translateY(-50%)rotate(0deg);
+                -ms-transform: translateY(-50%)rotate(0deg);
+                transform: translateY(-50%)rotate(0deg);
+
+                &:before {
+                    content: "\f107";
+                }
+            }
+        }
+
+        .acc-content {
+            position: relative;
+            display: none;
+
+            .content {
+                position: relative;
+                padding: 0 41px 30px 25px;
+
+                .text {
+                    display: block;
+                    font-size: 16px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .acc-content.current {
+            display: block;
+        }
+    }
+
+    .block.active-block {
+        -webkit-filter: drop-shadow(0 0 25px rgba(155, 155, 155, 0.2));
+        filter: drop-shadow(0 0 25px rgba(155, 155, 155, 0.2));
+    }
+}

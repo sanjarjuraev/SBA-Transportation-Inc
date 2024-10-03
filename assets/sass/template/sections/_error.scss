@@ -1,0 +1,67 @@
+/*==== Error 404 ====================*/
+.error-404 {
+    position: relative;
+    background: $gray-color;
+}
+
+.error-page__inner {
+    position: relative;
+    z-index: 1;
+}
+
+.error__shape {
+    .img-left__shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .plane-left__shape {
+        position: absolute;
+        z-index: -1;
+        bottom: 38%;
+        left: 5px;
+    }
+
+    .img-right__shape {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.error-page__image-box {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 55px;
+
+    .image-2 {
+        position: absolute;
+        top: 70px;
+        left: 30px;
+    }
+
+    .error-page__title {
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0;
+        font-size: 141px;
+        line-height: 1;
+    }
+}
+
+.error-page__sub-title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+.error-page__text {
+    font-size: 16px;
+    margin-bottom: 30px;
+}

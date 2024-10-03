@@ -1,0 +1,116 @@
+.swiper-pagination {
+    position: static;
+    line-height: 1;
+
+    .swiper-pagination-bullet {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid $gray-color;
+        background-color: transparent;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: relative;
+
+        &:hover,
+        &-active {
+            border-color: $theme-color;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--gray-color);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        &-active::before,
+        &:hover::before {
+            background-color: $theme-color;
+        }
+    }
+}
+
+/* Basic reset for the buttons */
+.owl-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Positioning and styling the buttons */
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.owl-prev,
+.owl-next {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for buttons */
+.owl-prev:hover,
+.owl-next:hover {
+    background-color: $yellow-color;
+    transform: scale(1.1);
+}
+
+/* Icon style */
+.owl-prev span,
+.owl-next span {
+    font-family: $icon-font;
+    font-weight: 900;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .owl-nav {
+        top: 60%;
+    }
+
+    .owl-prev,
+    .owl-next {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .owl-nav {
+        top: 65%;
+    }
+
+    .owl-prev,
+    .owl-next {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}

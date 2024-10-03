@@ -1,0 +1,394 @@
+/*== Contact ============*/
+.contact-section {
+    position: relative;
+    z-index: 2;
+
+    @include lg {
+        background-color: $white-color;
+    }
+
+    .bg-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 29%;
+        content: '';
+    }
+
+    .outer-box {
+        background: $white-color;
+        padding: 100px 0 0 80px;
+        z-index: 2;
+
+        @include lg {
+            padding: 100px 0 0 0;
+        }
+
+        @include md {
+            padding: 80px 0 0 0;
+        }
+    }
+
+    .form-column {
+        .inner-column {
+            padding-left: 60px;
+
+            @include lg {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .theme-btn.btn-style-2 {
+        color: $black-color;
+
+        &:hover {
+            color: $white-color;
+        }
+    }
+}
+
+.contact__shape {
+    .img-left__shape {
+        position: absolute;
+        bottom: 40px;
+        left: 50px;
+    }
+
+    .plane-left__shape {
+        position: absolute;
+        z-index: -1;
+        bottom: 48%;
+        left: 90px;
+    }
+}
+
+.contact-form.style-2 {
+    border-top: 0;
+    background-color: $theme-color;
+    padding: 50px 50px 58px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    @include md {
+        margin-top: 70px;
+    }
+
+    @include vxs {
+        margin-top: 70px;
+    }
+
+    @include sm {
+        padding: 52px 20px 60px;
+    }
+
+    &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: -168px;
+        height: 100%;
+        width: 100%;
+        max-width: 336px;
+        max-height: 336px;
+        background: url(../images/icons/gear.png) center/cover no-repeat;
+        content: "";
+        -webkit-animation: rotateMe 10s linear infinite;
+        animation: rotateMe 10s linear infinite;
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+
+    &:hover {
+        &::before {
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+        }
+    }
+
+    .form-group {
+
+        .select2-container--default .select2-selection--single,
+        input:not([type=submit]),
+        select {
+            height: 56px;
+        }
+
+        input::placeholder,
+        textarea::placeholder,
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder,
+        input::-moz-placeholder,
+        textarea::-moz-placeholder,
+        input:-ms-input-placeholder,
+        textarea:-ms-input-placeholder,
+        input::-ms-input-placeholder,
+        textarea::-ms-input-placeholder {
+            font-size: 15px;
+            color: $body-color;
+        }
+
+        label.error {
+            color: $white-color;
+        }
+    }
+
+
+    .title-box {
+        text-align: center;
+        margin-bottom: 34px;
+
+        h3 {
+            margin-bottom: 13px;
+        }
+
+        .sub-title {
+            color: $white-color;
+            opacity: .8;
+        }
+    }
+
+    .remember-check {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 15px;
+        line-height: 1;
+        color: $white-color;
+        margin: 0 0 30px;
+
+        label {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            input[type=checkbox] {
+                &:checked {
+                    &::after {
+                        content: '\f00c';
+                        font-family: $icon-font;
+                        color: $white-color;
+                        font-size: 10px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+
+            &:hover {
+                label {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        .form-group {
+            .form_name {
+                &::before {
+                    position: absolute;
+                    z-index: 1;
+                    font-family: $icon-font;
+                    font-size: 14px;
+                    right: 25px;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    color: $theme-color;
+                    cursor: pointer;
+                    content: '\f007';
+                }
+            }
+
+            .form_email {
+                &::before {
+                    position: absolute;
+                    z-index: 1;
+                    font-family: $icon-font;
+                    font-size: 14px;
+                    right: 25px;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    color: $theme-color;
+                    cursor: pointer;
+                    content: '\f0e0';
+                }
+            }
+        }
+
+        &.style-2 {
+            .remember-check {
+                input[type=checkbox] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid $white-color;
+                    cursor: pointer;
+                    position: relative;
+                    -webkit-transition: border-color 0.3s ease;
+                    -o-transition: border-color 0.3s ease;
+                    transition: border-color 0.3s ease;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+
+/*== Inner Page Accordion box ==*/
+.innerpage .accordion-box .block .acc-btn.active {
+    border-bottom: 1px solid #90949a2e;
+    margin-bottom: 20px;
+}
+
+/*============================================
+Inner Page Contact Details
+==============================================*/
+.contact-details {
+    position: relative;
+
+    .bg.bg-image {
+        height: auto;
+        bottom: -160px;
+    }
+
+    .sec-title {
+        margin-bottom: 35px;
+    }
+
+    .map-column {
+        position: relative;
+    }
+}
+
+.contact-details__info {
+    position: relative;
+    display: block;
+
+    li {
+        position: relative;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        background: $white-color;
+        padding: 30px;
+        max-width: 550px;
+
+        @include md {
+            max-width: 100%;
+        }
+
+        .icon {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: $theme-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-transition: all 500ms ease;
+            transition: all 500ms ease;
+            flex: 0 0 auto;
+            flex-shrink: 0;
+
+            span {
+                color: $white-color;
+                font-size: 22px;
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+            }
+        }
+
+        &:hover {
+            .icon {
+                background-color: $yellow-color;
+
+                span {
+                    color: $black-color;
+                }
+            }
+        }
+
+        .text {
+            h6 {
+                font-size: 16px;
+                color: $body-color;
+                margin-bottom: 7px;
+            }
+
+            margin-left: 20px;
+
+            p {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            a {
+                font-size: 18px;
+                font-weight: 600;
+                color: $black-color;
+                @include transition;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+
+            span {
+                font-size: 18px;
+                color: $black-color;
+                font-weight: 600;
+            }
+        }
+    }
+
+    li+li {
+        margin-top: 20px;
+    }
+}
+
+.map-box {
+    border: 10px solid $white-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    .map-canvas {
+        height: 620px;
+        filter: brightness(0.7);
+        @include transition;
+
+        @include sm {
+            height: 520px;
+        }
+
+        @include xs {
+            height: 420px;
+        }
+    }
+
+    &:hover .map-canvas {
+        filter: brightness(1);
+    }
+}
+
+.contact-form {
+    position: relative;
+}

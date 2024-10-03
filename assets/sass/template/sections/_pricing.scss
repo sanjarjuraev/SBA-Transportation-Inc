@@ -1,0 +1,317 @@
+/*=====Inner Page Pricing Section======================*/
+.faq-section {
+    position: relative;
+}
+
+.faq__shape {
+    .icon-plane7 {
+        position: absolute;
+    }
+}
+
+.faq-thumb-content {
+    max-width: 410px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 40px 70px;
+    background: url("../images/resource/faq-d1.jpg") center/cover no-repeat;
+
+    @include md {
+        margin-bottom: 30px;
+    }
+
+    @include sm {
+        max-width: 100%;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(23, 23, 23, 0.8);
+    }
+
+    .logo-box {
+        display: inline-block;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $yellow-color;
+        margin-bottom: 16px;
+    }
+
+    h4 {
+        font-size: 24px;
+        color: $white-color;
+        margin-bottom: 0;
+    }
+}
+
+// Pricing Inner Page
+.pricing-section {
+    position: relative;
+
+    .sec-title {
+        margin-bottom: 45px;
+    }
+}
+
+.pricing-block-one {
+    .inner-box {
+        position: relative;
+        z-index: 1;
+        padding: 20px 20px 40px;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        max-width: 400px;
+        margin: 0 auto;
+        background-image: url(../images/pricing/pricing-bg.jpg);
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 148px;
+            height: 148px;
+            background-color: $yellow-color;
+            -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+            clip-path: polygon(0 0, 0% 100%, 100% 0);
+        }
+
+        .title {
+            position: relative;
+            z-index: 2;
+            color: $theme-color;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+
+            @include nestHub {
+                margin-bottom: 10px;
+            }
+
+            @include tablet-m {
+                margin-bottom: 10px;
+            }
+
+            a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .price {
+            position: relative;
+            color: $black-color;
+            font-size: 42px;
+            font-weight: 600;
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease;
+
+            @include nestHub {
+                font-size: 27px;
+            }
+
+            @include tablet-m {
+                font-size: 27px;
+            }
+
+            small {
+                font-size: 17px;
+                font-weight: 500;
+            }
+        }
+
+        .license {
+            display: inline-block;
+            font-size: 16px;
+            color: $black-color;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 23px;
+            height: 40px;
+            line-height: 40px;
+            filter: drop-shadow(0px 10px 25px rgba(155, 155, 155, 0.25));
+            background-color: $white-color;
+            margin-top: 30px;
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .inner-content {
+            padding: 0 30px;
+
+            @include nestHub {
+                padding: 0 15px;
+            }
+        }
+
+        .list-style {
+            position: relative;
+            margin: 38px 0 34px;
+
+            li {
+                position: relative;
+                font-size: 16px;
+                padding-left: 30px;
+                padding-bottom: 10px;
+                margin-bottom: 13px;
+                border-bottom: 1px dashed rgba(201, 29, 37, 0.1);
+                -webkit-transition: all 300ms ease;
+                transition: all 300ms ease;
+
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+
+                .icon {
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+
+    .pricing-box {
+        position: relative;
+        z-index: 1;
+        padding: 40px 40px 35px;
+        background-size: cover;
+        background-position: center center;
+
+        @media (min-width:1024px) and (max-width:1280px) {
+            padding: 40px 20px 35px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(23, 23, 23, 0.8);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $white-color;
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .inner {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-box {
+            margin-right: 30px;
+
+            @media (min-width:1024px) and (max-width:1280px) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &:hover {
+        .pricing-box {
+            &::after {
+                height: 0;
+            }
+        }
+
+        .inner-box {
+            .title {
+                color: $yellow-color;
+            }
+
+            .price {
+                color: $white-color;
+            }
+
+            .license {
+                color: $white-color;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+}
+
+.icon-arrow {
+    background-image: url(../images/icons/check.png);
+    width: 18px;
+    height: 16px;
+}
+
+.icon-check {
+    background-image: url(../images/pricing/check.png);
+    width: 20px;
+    height: 20px;
+}
+
+.pricing-block-one.current {
+    .pricing-box {
+        &::after {
+            height: 0;
+        }
+    }
+
+    .inner-box {
+        .title {
+            color: $yellow-color;
+        }
+
+        .price {
+            color: $white-color;
+        }
+
+        .license {
+            color: $white-color;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+@media only screen and (max-width: 427px) {
+    .pricing-block-one {
+        .pricing-box {
+            .icon-box {
+                margin: 0 0 30px;
+            }
+
+            .inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        .inner-box {
+            .inner-content {
+                padding: 0;
+            }
+        }
+    }
+}

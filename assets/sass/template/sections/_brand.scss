@@ -1,0 +1,56 @@
+/*==== Brands Section =====================*/
+.brands-section {
+  position: relative;
+  z-index: 2;
+  background: $white-color;
+  margin: 20px 20px 0;
+}
+
+.brands-carousel {
+  position: relative;
+  padding: 62px 0;
+
+  .brand-item {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    a {
+      position: relative;
+      display: block;
+      -webkit-transition: all 300ms ease;
+      -o-transition: all 300ms ease;
+      transition: all 300ms ease;
+
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      display: inline-block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      position: relative;
+      width: auto !important;
+      display: inline-block !important;
+      -webkit-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease;
+    }
+  }
+
+
+  .brand--item {
+    text-align: center;
+  }
+}
