@@ -123,7 +123,7 @@
               <div class="logo">
                 <a href="index.html">
                   <img src="assets/images/logo.png" alt="" title="SBA" />
-                  <img src="assets/images/logo.png" alt="" title="SBA" />
+                  <img src="assets/images/logo1.png" alt="" title="SBA" />
                 </a>
               </div>
             </div>
@@ -167,7 +167,7 @@
             <div class="upper-box">
               <div class="nav-logo">
                 <a href="index.html"
-                  ><img src="assets/images/logo.png" alt="" title=""
+                  ><img src="assets/images/logo1.png" alt="" title=""
                 /></a>
               </div>
               <div class="close-btn"><i class="icon fa fa-times"></i></div>
@@ -180,7 +180,7 @@
                 <div class="contact-info-box">
                   <span class="icon fa-solid fa-phone"></span>
                   <span class="title">Call Us Anytime</span>
-                  <a href="tel:+012-345-6789">+1 240 240 9449</a>
+                  <a href="tel:+12402409449">+1 240 240 9449</a>
                 </div>
               </li>
               <li>
@@ -190,13 +190,6 @@
                   <a href="mailto:help@company.com"
                     >info@sbatransportationinc.com</a
                   >
-                </div>
-              </li>
-              <li>
-                <div class="contact-info-box">
-                  <span class="icon fa-regular fa-clock"></span>
-                  <span class="title">Opening Hour</span>
-                  Mon - Sat 8:00 - 6:30, Sunday - CLOSED
                 </div>
               </li>
             </ul>
@@ -1374,7 +1367,7 @@
                       <li><a href="#about">About SBA</a></li>
                       <li><a href="#team">Meet the Team</a></li>
                       <li><a href="#service">Our Service</a></li>
-                      <li><a href="#">Our Achivements</a></li>
+                      <li><a href="#achivement">Our Achivements</a></li>
                     </ul>
                   </div>
                 </div>
@@ -1389,11 +1382,16 @@
                       <div class="text">
                         Signup for our latest news & articles.
                       </div>
-                      <form id="contact_form1" class="subscribe" method="post">
+                      <form
+                        id="contact_form1"
+                        class="subscribe"
+                        method="post"
+                        action="https://script.google.com/macros/s/AKfycbx0O5o3bGz5jPgjVynFmRtRnyRMwYcrlOdGIxx1t3AIIrL4vXQa1rMYtLmKty_ykRAwGw/exec"
+                      >
                         <div class="form-group">
                           <input
                             type="email"
-                            name="email"
+                            name="Email"
                             class="email"
                             value
                             placeholder="Email Address"
@@ -1451,9 +1449,9 @@
                 >
               </div>
               <ul class="footer-nav">
-                <li><a href="#">Terms & Condition</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Legal</a></li>
+                <li><a href="">Terms & Condition</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Legal</a></li>
               </ul>
             </div>
           </div>
@@ -1487,152 +1485,35 @@
         ></path>
       </svg>
     </div>
-    <!-- <form
-      id="contact_form"
-      class="contact-form1"
-      action="https://script.google.com/macros/s/AKfycbwTfP-Stu-dVjkg4ZdTipIAbupr9I7H8QViPmWx-hrtE3jmGGE9XXOJK6rSaa9zqrDRFw/exec"
-      method="post"
-    >
-      <div class="form-group">
-        <label class="form_name" for="form_name"></label>
-        <input
-          type="text"
-          id="form_name"
-          name="Name"
-          placeholder="Your Name"
-          autocomplete="on"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="form_email" for="form_email"></label>
-        <input
-          type="email"
-          id="form_email"
-          name="Email"
-          placeholder="Email Address"
-          autocomplete="off"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="form_subject" for="form_subject"></label>
-        <input
-          type="text"
-          id="form_subject"
-          name="Subject"
-          placeholder="Subject"
-          autocomplete="off"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="form_message" for="form_message"></label>
-        <textarea
-          type="text"
-          id="form_message"
-          name="Message"
-          placeholder="Message"
-          autocomplete="off"
-          rows="4"
-        ></textarea>
-      </div>
-      <div class="form-group mt-15">
-        <button
-          class="theme-btn btn-style-1"
-          type="submit"
-          name="submit-form"
-          data-loading-text="Please wait..."
-        >
-          <span class="btn-title">Submit</span>
-        </button>
-      </div>
-    </form> -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Get all navigation items
+        const menuItems = document.querySelectorAll('.navigation li a')
 
-    <!-- <script>
-      document
-        .getElementById('contact_form')
-        .addEventListener('submit', function (e) {
-          e.preventDefault() // Prevent the default form submission
+        // Add click event listener to each menu item
+        menuItems.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            // Prevent the default anchor behavior to allow JavaScript to handle it properly
+            e.preventDefault()
 
-          const form = e.target
-          const formData = new FormData(form)
+            // Remove 'current' class from all items
+            menuItems.forEach((link) =>
+              link.parentElement.classList.remove('current')
+            )
 
-          // Convert form data to an object
-          const data = {}
-          formData.forEach((value, key) => {
-            data[key] = value
-          })
+            // Add 'current' class to the parent li of the clicked link
+            link.parentElement.classList.add('current')
 
-          // Send form data to Google Sheets via Apps Script
-          fetch(form.action, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-          })
-            .then((response) => response.text())
-            .then((text) => {
-              console.log('Response from Google Script:', text)
-              alert('Form submitted successfully!')
-              form.reset() // Reset the form after successful submission
-            })
-            .catch((error) => {
-              console.error('Error:', error)
-              alert('There was an error submitting the form. Please try again.')
-            })
-        })
-    </script> -->
-
-    <!-- <script>
-      $(document).ready(function () {
-        // Select all links with hashes
-        $('a[href*="#"]')
-          // Remove links that don't actually link to anything
-          .not('[href="#"]')
-          .not('[href="#0"]')
-          .click(function (event) {
-            // On-page links
-            if (
-              location.pathname.replace(/^\//, '') ==
-                this.pathname.replace(/^\//, '') &&
-              location.hostname == this.hostname
-            ) {
-              // Figure out element to scroll to
-              var target = $(this.hash)
-              target = target.length
-                ? target
-                : $('[name=' + this.hash.slice(1) + ']')
-              // Does a scroll target exist?
-              if (target.length) {
-                // Only prevent default if animation is actually gonna happen
-                event.preventDefault()
-                $('html, body').animate(
-                  {
-                    scrollTop: target.offset().top,
-                  },
-                  1000,
-                  function () {
-                    // Callback after animation
-                    // Must change focus!
-                    var $target = $(target)
-                    $target.focus()
-                    if ($target.is(':focus')) {
-                      // Checking if the target was focused
-                      return false
-                    } else {
-                      $target.attr('tabindex', '-1') // Adding tabindex for elements not focusable
-                      $target.focus() // Set focus again
-                    }
-                  }
-                )
-              }
+            // Scroll to the appropriate section
+            const targetId = link.getAttribute('href')
+            const targetElement = document.querySelector(targetId)
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' })
             }
           })
+        })
       })
-    </script> -->
-
+    </script>
     <!-- Jquery -->
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

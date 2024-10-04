@@ -1,69 +1,69 @@
 /** @format */
 
-(function ($) {
-  ('use strict');
+;(function ($) {
+  ;('use strict')
 
   //Update Header Style and Scroll to Top
   function headerStyle() {
     if ($('.main-header').length) {
-      let windowpos = $(window).scrollTop();
-      let siteHeader = $('.header-style-1');
-      let scrollLink = $('.scroll-to-top');
-      let sticky_header = $('.main-header .sticky-header');
+      let windowpos = $(window).scrollTop()
+      let siteHeader = $('.header-style-1')
+      let scrollLink = $('.scroll-to-top')
+      let sticky_header = $('.main-header .sticky-header')
       if (windowpos > 100) {
-        sticky_header.addClass('fixed-header animated slideInDown');
-        scrollLink.fadeIn(300);
+        sticky_header.addClass('fixed-header animated slideInDown')
+        scrollLink.fadeIn(300)
       } else {
-        sticky_header.removeClass('fixed-header animated slideInDown');
-        scrollLink.fadeOut(300);
+        sticky_header.removeClass('fixed-header animated slideInDown')
+        scrollLink.fadeOut(300)
       }
       if (windowpos > 1) {
-        siteHeader.addClass('fixed-header');
+        siteHeader.addClass('fixed-header')
       } else {
-        siteHeader.removeClass('fixed-header');
+        siteHeader.removeClass('fixed-header')
       }
     }
   }
 
-  headerStyle();
+  headerStyle()
 
   // if ($('.main-header li.dropdown ul').length) {
   //   $('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>');
   // }
 
   if ($('.mobile-menu').length) {
-    let mobileMenuContent = $('.main-header .main-menu .navigation').html();
-    $('.mobile-menu .navigation').append(mobileMenuContent);
-    $('.sticky-header .navigation').append(mobileMenuContent);
+    let mobileMenuContent = $('.main-header .main-menu .navigation').html()
+    $('.mobile-menu .navigation').append(mobileMenuContent)
+    $('.sticky-header .navigation').append(mobileMenuContent)
     $('.mobile-menu .close-btn').on('click', function () {
-      $('body').removeClass('mobile-menu-visible');
-    });
+      $('body').removeClass('mobile-menu-visible')
+    })
     $('.mobile-menu li.dropdown .dropdown-btn').on('click', function () {
-      $(this).prev('ul').slideToggle(500);
-      $(this).toggleClass('active');
-    });
+      $(this).prev('ul').slideToggle(500)
+      $(this).toggleClass('active')
+    })
     $('.mobile-nav-toggler').on('click', function () {
-      $('body').addClass('mobile-menu-visible');
-    });
+      $('body').addClass('mobile-menu-visible')
+    })
     $('.mobile-menu .menu-backdrop, .mobile-menu .close-btn').on(
       'click',
       function () {
-        $('body').removeClass('mobile-menu-visible');
+        $('body').removeClass('mobile-menu-visible')
       }
-    );
+    )
   }
 
   //Header Search
   if ($('.search-btn').length) {
     $('.search-btn')
       .click(function () {
-        $('body').addClass('search-active');
+        $('body').addClass('search-active')
       })
       .end()
       .find('.close-search')
       .click(function () {
-        $('body').removeClass('search-active');
-      });
+        $('body').removeClass('search-active')
+      })
   }
 
   // Elements Animation
@@ -73,22 +73,22 @@
       animateClass: 'animated',
       mobile: true,
       live: true,
-    });
-    wow.init();
+    })
+    wow.init()
   }
 
   // Progress Bar
   if ($('.progress-line').length) {
     $('.progress-line').appear(
       function () {
-        let el = $(this);
-        let percent = el.data('width');
-        el.css('width', percent + '%');
+        let el = $(this)
+        let percent = el.data('width')
+        el.css('width', percent + '%')
       },
       {
         accY: 0,
       }
-    );
+    )
   }
 
   //Progress Counter + Text Count
@@ -96,10 +96,10 @@
     function () {
       let $t = $(this),
         n = $t.find('.count-text').attr('data-stop'),
-        r = parseInt($t.find('.count-text').attr('data-speed'), 10);
+        r = parseInt($t.find('.count-text').attr('data-speed'), 10)
 
       if (!$t.hasClass('counted')) {
-        $t.addClass('counted');
+        $t.addClass('counted')
         $({
           countNum: $t.find('.count-text').text(),
         }).animate(
@@ -110,41 +110,41 @@
             duration: r,
             easing: 'linear',
             step: function () {
-              $t.find('.count-text').text(Math.floor(this.countNum));
+              $t.find('.count-text').text(Math.floor(this.countNum))
             },
             complete: function () {
-              $t.find('.count-text').text(this.countNum);
+              $t.find('.count-text').text(this.countNum)
             },
           }
-        );
+        )
       }
     },
     {
       accY: 0,
     }
-  );
+  )
 
   // Odometer Active
   if ($('.odometer-wrapper').length) {
     $('.odometer-wrapper').appear(
       function () {
-        let count = $(this).attr('data-count'); // Changed var to let
-        let odometer = $(this).closest('.odometer-wrapper').find('.odometer'); // Changed var to let
+        let count = $(this).attr('data-count') // Changed var to let
+        let odometer = $(this).closest('.odometer-wrapper').find('.odometer') // Changed var to let
 
         setTimeout(function () {
-          odometer.html(count);
-        }, 500);
+          odometer.html(count)
+        }, 500)
       },
       {
         accY: 0,
       }
-    );
+    )
   }
 
   // Select2 Active
   $('.custom-select').select2({
     minimumResultsForSearch: 4,
-  });
+  })
 
   // Range Slider Active
   if ($('.distance-range-slider').length) {
@@ -154,44 +154,50 @@
       max: 20000,
       values: [0, 1500],
       slide: function (event, ui) {
-        $('input.range-amount').val(ui.values[0] + ' - ' + ui.values[1]);
+        $('input.range-amount').val(ui.values[0] + ' - ' + ui.values[1])
       },
-    });
+    })
     $('input.range-amount').val(
       $('.distance-range-slider').slider('values', 0) +
         ' - ' +
         $('.distance-range-slider').slider('values', 1)
-    );
+    )
   }
 
   // widget categories menu
   $(document).ready(function () {
     $('.sidebar-service-list ul li').on('mouseenter', function () {
-      $(this).addClass('current');
-      $('.sidebar-service-list ul li').not(this).removeClass('current');
-    });
-  });
+      $(this).addClass('current')
+      $('.sidebar-service-list ul li').not(this).removeClass('current')
+    })
+  })
+  $(document).ready(function () {
+    $('.nav .main-menu ul li').on('click', function () {
+      $(this).addClass('current')
+      $('.nav .main-menu ul li').not(this).removeClass('current')
+    })
+  })
 
   // Team Share
   $('.team-share').on('click', function () {
-    $(this).toggleClass('active');
-    $('.team-share').not(this).removeClass('active');
-  });
+    $(this).toggleClass('active')
+    $('.team-share').not(this).removeClass('active')
+  })
 
   $(
     '.pricing-block-one, .project-details__tags li, .sidebar__tags-list a'
   ).hover(function () {
-    $(this).addClass('current').siblings().removeClass('current');
-  });
+    $(this).addClass('current').siblings().removeClass('current')
+  })
 
   /*===========================================
 	=         Magic Cursor         =
     =============================================*/
   function magicCursor() {
     // Add the custom cursor element to the body
-    $('body').append('<div class="magic-cursor"></div>');
+    $('body').append('<div class="magic-cursor"></div>')
 
-    var cursor = $('.magic-cursor');
+    var cursor = $('.magic-cursor')
 
     // Update cursor position on mouse move
     $(window).on('mousemove', function (e) {
@@ -199,59 +205,59 @@
         transform:
           'translate(' + (e.clientX - 15) + 'px,' + (e.clientY - 15) + 'px)',
         visibility: 'inherit',
-      });
-    });
+      })
+    })
 
     // Handle hover states for links and buttons
     $('a, button, .theme-button, .scroll-top').on('mouseenter', function () {
-      cursor.addClass('cursor-grow');
-    });
+      cursor.addClass('cursor-grow')
+    })
 
     $('a, button, .theme-button, .scroll-top').on('mouseleave', function () {
-      cursor.removeClass('cursor-grow');
-    });
+      cursor.removeClass('cursor-grow')
+    })
   }
 
   // Video Play
-  const radio_buttons = document.querySelector('#video_check');
-  const video_start = document.querySelector('.achivement-section');
+  const radio_buttons = document.querySelector('#video_check')
+  const video_start = document.querySelector('.achivement-section')
 
   if (radio_buttons) {
     radio_buttons.addEventListener('click', function () {
-      let video = document.querySelector('.achivement-section .video');
-      let videoClose = document.querySelector('.achivement-section .video');
+      let video = document.querySelector('.achivement-section .video')
+      let videoClose = document.querySelector('.achivement-section .video')
       if (radio_buttons.checked) {
-        document.querySelector('.video-wrapper').style.zIndex = '0';
-        videoClose.style.display = 'block';
-        video_start.classList.add('start-video');
+        document.querySelector('.video-wrapper').style.zIndex = '0'
+        videoClose.style.display = 'block'
+        video_start.classList.add('start-video')
       } else {
-        document.querySelector('.video-wrapper').style.zIndex = '0';
-        video.style.display = 'block';
-        video_start.classList.remove('start-video');
+        document.querySelector('.video-wrapper').style.zIndex = '0'
+        video.style.display = 'block'
+        video_start.classList.remove('start-video')
       }
-    });
+    })
   }
 
   //Accordion Box
   if ($('.accordion-box').length) {
     $('.accordion-box').on('click', '.acc-btn', function () {
-      var outerBox = $(this).parents('.accordion-box');
-      var target = $(this).parents('.accordion');
+      var outerBox = $(this).parents('.accordion-box')
+      var target = $(this).parents('.accordion')
 
       if ($(this).hasClass('active') !== true) {
-        $(outerBox).find('.accordion .acc-btn').removeClass('active ');
+        $(outerBox).find('.accordion .acc-btn').removeClass('active ')
       }
 
       if ($(this).next('.acc-content').is(':visible')) {
-        return false;
+        return false
       } else {
-        $(this).addClass('active');
-        $(outerBox).children('.accordion').removeClass('active-block');
-        $(outerBox).find('.accordion').children('.acc-content').slideUp(300);
-        target.addClass('active-block');
-        $(this).next('.acc-content').slideDown(300);
+        $(this).addClass('active')
+        $(outerBox).children('.accordion').removeClass('active-block')
+        $(outerBox).find('.accordion').children('.acc-content').slideUp(300)
+        target.addClass('active-block')
+        $(this).next('.acc-content').slideDown(300)
       }
-    });
+    })
   }
 
   //LightBox / Fancybox
@@ -262,50 +268,49 @@
       helpers: {
         media: {},
       },
-    });
+    })
   }
 
   /*===========================================
 	=         Scroll To Top         =
     =============================================*/
   if ($('.scroll-top')) {
-    var scrollTopbtn = document.querySelector('.scroll-top');
-    var progressPath = document.querySelector('.scroll-top path');
-    var pathLength = progressPath.getTotalLength();
+    var scrollTopbtn = document.querySelector('.scroll-top')
+    var progressPath = document.querySelector('.scroll-top path')
+    var pathLength = progressPath.getTotalLength()
+    progressPath.style.transition = progressPath.style.WebkitTransition = 'none'
+    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength
+    progressPath.style.strokeDashoffset = pathLength
+    progressPath.getBoundingClientRect()
     progressPath.style.transition = progressPath.style.WebkitTransition =
-      'none';
-    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-    progressPath.style.strokeDashoffset = pathLength;
-    progressPath.getBoundingClientRect();
-    progressPath.style.transition = progressPath.style.WebkitTransition =
-      'stroke-dashoffset 10ms linear';
+      'stroke-dashoffset 10ms linear'
     var updateProgress = function () {
-      var scroll = $(window).scrollTop();
-      var height = $(document).height() - $(window).height();
-      var progress = pathLength - (scroll * pathLength) / height;
-      progressPath.style.strokeDashoffset = progress;
-    };
-    updateProgress();
-    $(window).scroll(updateProgress);
-    var offset = 50;
-    var duration = 750;
+      var scroll = $(window).scrollTop()
+      var height = $(document).height() - $(window).height()
+      var progress = pathLength - (scroll * pathLength) / height
+      progressPath.style.strokeDashoffset = progress
+    }
+    updateProgress()
+    $(window).scroll(updateProgress)
+    var offset = 50
+    var duration = 750
     jQuery(window).on('scroll', function () {
       if (jQuery(this).scrollTop() > offset) {
-        jQuery(scrollTopbtn).addClass('show');
+        jQuery(scrollTopbtn).addClass('show')
       } else {
-        jQuery(scrollTopbtn).removeClass('show');
+        jQuery(scrollTopbtn).removeClass('show')
       }
-    });
+    })
     jQuery(scrollTopbtn).on('click', function (event) {
-      event.preventDefault();
+      event.preventDefault()
       jQuery('html, body').animate(
         {
           scrollTop: 0,
         },
         1
-      );
-      return false;
-    });
+      )
+      return false
+    })
   }
 
   // widget categories menu
@@ -314,14 +319,14 @@
       'mouseenter',
       'li',
       function () {
-        $(this).addClass('active').siblings().removeClass('active');
+        $(this).addClass('active').siblings().removeClass('active')
       }
-    );
-  });
+    )
+  })
 
   // circle text animation
   function createTextAnimation(textElement, circleBoxElement) {
-    textElement.style.cssText = 'animation: text-rotate 10s linear infinite;';
+    textElement.style.cssText = 'animation: text-rotate 10s linear infinite;'
 
     const textRotateAnimation = textElement.animate(
       [
@@ -337,29 +342,27 @@
         iterations: Infinity,
         easing: 'linear',
       }
-    );
+    )
 
     circleBoxElement.addEventListener('mouseenter', () =>
       textRotateAnimation.pause()
-    );
+    )
     circleBoxElement.addEventListener('mouseleave', () =>
       textRotateAnimation.play()
-    );
+    )
   }
 
   // Apply text animation to elements with the class "circle-box"
-  const circleBoxes = document.querySelectorAll('.circle-box');
+  const circleBoxes = document.querySelectorAll('.circle-box')
   circleBoxes.forEach((circleBox) => {
-    const text = circleBox.querySelector('.text-inner');
-    createTextAnimation(text, circleBox);
-  });
+    const text = circleBox.querySelector('.text-inner')
+    createTextAnimation(text, circleBox)
+  })
 
-  const chooseUsShapes = document.querySelectorAll(
-    '.section-shape > div > img'
-  );
+  const chooseUsShapes = document.querySelectorAll('.section-shape > div > img')
   chooseUsShapes.forEach((chooseUsShape) => {
-    createTextAnimation(chooseUsShape, chooseUsShape.parentElement);
-  });
+    createTextAnimation(chooseUsShape, chooseUsShape.parentElement)
+  })
 
   /* =======================
     Form Validation
@@ -383,32 +386,32 @@
         message: 'Please enter a message',
       },
       // Other options if needed
-    });
-  });
+    })
+  })
 
   /*===========================================
 	=         Ajax Contact Form         =
     =============================================*/
   function ajaxForm() {
     const handleFormSubmission = (form, formIndex) => {
-      console.log(form, formIndex);
+      form, formIndex, 'sdfg'
 
       form.addEventListener('submit', (ev) => {
-        ev.preventDefault();
-        const data = new FormData(form);
-        const submitButton = form.querySelector('button[type="submit"]');
+        ev.preventDefault()
+        const data = new FormData(form)
+        const submitButton = form.querySelector('button[type="submit"]')
         const originalButtonText =
-          submitButton.querySelector('.btn-title').textContent;
-        const loadingText = submitButton.dataset.loadingText;
-        submitButton.querySelector('.btn-title').textContent = loadingText;
-        submitButton.disabled = true;
+          submitButton.querySelector('.btn-title').textContent
+        const loadingText = submitButton.dataset.loadingText
+        submitButton.querySelector('.btn-title').textContent = loadingText
+        submitButton.disabled = true
 
         sendAjaxRequest(
           'POST',
           form.action,
           data,
           (response) => {
-            handleSuccess(response, form, submitButton, originalButtonText);
+            handleSuccess(response, form, submitButton, originalButtonText)
           },
           (statusCode, responseText) => {
             handleError(
@@ -417,11 +420,11 @@
               form,
               submitButton,
               originalButtonText
-            );
+            )
           }
-        );
-      });
-    };
+        )
+      })
+    }
 
     const handleSuccess = (
       response,
@@ -429,19 +432,19 @@
       submitButton,
       originalButtonText
     ) => {
-      form.reset();
-      let message = 'Success!';
+      form.reset()
+      let message = 'Success!'
       if (form.classList.contains('contact-form2')) {
-        message = 'Submit successfully!';
+        message = 'Submit successfully!'
       } else if (form.classList.contains('contact-form1')) {
-        message = 'Contact submitted!';
+        message = 'Contact submitted!'
       } else if (form.classList.contains('subscribe')) {
-        message = 'Subscribed!';
+        message = 'Subscribed!'
       }
-      showPopup('success', message);
-      submitButton.querySelector('.btn-title').textContent = originalButtonText;
-      submitButton.disabled = false;
-    };
+      showPopup('success', message)
+      submitButton.querySelector('.btn-title').textContent = originalButtonText
+      submitButton.disabled = false
+    }
 
     const handleError = (
       statusCode,
@@ -450,14 +453,14 @@
       submitButton,
       originalButtonText
     ) => {
-      let message = 'Oops! There was a problem.';
+      let message = 'Oops! There was a problem.'
       if (form.classList.contains('contact-form2')) {
-        message = 'Failed. Please try again.';
+        message = 'Failed. Please try again.'
       }
-      showPopup('error', message);
-      submitButton.querySelector('.btn-title').textContent = originalButtonText;
-      submitButton.disabled = false;
-    };
+      showPopup('error', message)
+      submitButton.querySelector('.btn-title').textContent = originalButtonText
+      submitButton.disabled = false
+    }
     const sendAjaxRequest = (
       method,
       url,
@@ -465,8 +468,7 @@
       successCallback,
       errorCallback
     ) => {
-      const jsonData = JSON.stringify(Object.fromEntries(data.entries()));
-      console.log(jsonData, 'jsonData');
+      const jsonData = JSON.stringify(Object.fromEntries(data?.entries()))
 
       fetch(url, {
         method: method,
@@ -479,51 +481,26 @@
         // mode: 'cors',
       })
         .then(() => {
-          successCallback();
+          successCallback()
         })
         .catch((error) => {
-          console.log(error, 'error');
-
-          errorCallback(500, error.message);
-        });
-    };
-
-    // const sendAjaxRequest = (
-    //   method,
-    //   url,
-    //   data,
-    //   successCallback,
-    //   errorCallback
-    // ) => {
-    //   const xhr = new XMLHttpRequest()
-    //   xhr.open(method, url, { mode: 'no-cors' })
-    //   xhr.setRequestHeader('Content-Type', 'application/json')
-    //   xhr.onreadystatechange = () => {
-    //     console.log(xhr, 'xhr')
-
-    //     if (xhr.readyState !== XMLHttpRequest.DONE) return
-    //     if (xhr.status === 200) {
-    //       successCallback(xhr.response)
-    //     } else {
-    //       errorCallback(xhr.status, xhr.responseText)
-    //     }
-    //   }
-    //   xhr.send(data)
-    // }
+          errorCallback(500, error.message)
+        })
+    }
 
     const showPopup = (status, message) => {
-      const popup = document.createElement('div');
-      popup.className = `popup-status ${status}`;
+      const popup = document.createElement('div')
+      popup.className = `popup-status ${status}`
       popup.innerHTML = `<i class="far fa-${
         status === 'success' ? 'check-circle' : 'times-circle'
-      }"></i> ${message}`;
-      document.body.appendChild(popup);
-      setTimeout(() => popup.remove(), 3000); // Remove the popup after 3 seconds
-    };
+      }"></i> ${message}`
+      document.body.appendChild(popup)
+      setTimeout(() => popup.remove(), 3000) // Remove the popup after 3 seconds
+    }
 
-    const forms = document.querySelectorAll('.contact-form1, .subscribe');
+    const forms = document.querySelectorAll('.contact-form1, .subscribe')
 
-    forms.forEach((form, index) => handleFormSubmission(form, index));
+    forms.forEach((form, index) => handleFormSubmission(form, index))
   }
 
   /*===========================================
@@ -538,7 +515,7 @@
       duplicated: true,
       pauseOnHover: true,
       startVisible: true,
-    });
+    })
   }
 
   //*=============All Owl Carousel========*//
@@ -572,7 +549,7 @@
           items: 3,
         },
       },
-    });
+    })
   }
 
   // Projects Carousel
@@ -604,7 +581,7 @@
           items: 3,
         },
       },
-    });
+    })
   }
 
   // Projects Carousel Two
@@ -636,7 +613,7 @@
           items: 3,
         },
       },
-    });
+    })
   }
 
   // Projects Carousel Two
@@ -669,7 +646,7 @@
           items: 3,
         },
       },
-    });
+    })
   }
 
   // Testimonial Carousel
@@ -708,7 +685,7 @@
           center: true,
         },
       },
-    });
+    })
   }
 
   // Testimonial Carousel Two
@@ -744,7 +721,7 @@
           center: true,
         },
       },
-    });
+    })
   }
 
   // Blog Carousel
@@ -777,7 +754,7 @@
           items: 3,
         },
       },
-    });
+    })
   }
 
   // Brands Carousel
@@ -810,7 +787,7 @@
           items: 5,
         },
       },
-    });
+    })
   }
 
   /* ==========================================================================
@@ -818,14 +795,14 @@
      ========================================================================== */
 
   $(window).on('load', function () {
-    magicCursor();
-    ajaxForm();
-    preLoader();
-  });
+    magicCursor()
+    ajaxForm()
+    preLoader()
+  })
 
   $(window).on('scroll', function () {
-    headerStyle();
-  });
+    headerStyle()
+  })
 
   /* ==========================================================================
      When document is loading, do
@@ -833,36 +810,36 @@
 
   /*------------- preloader JS --------------*/
   function preLoader() {
-    let percentage = 0;
+    let percentage = 0
     let LoadingCounter = setInterval(function () {
       if (percentage <= 100) {
         // Update the percentage display
-        $('.loading-counter').text(percentage + '%');
+        $('.loading-counter').text(percentage + '%')
 
-        $('.top-bar, .down-bar').css('width', (100 - percentage) / 2 + '%');
+        $('.top-bar, .down-bar').css('width', (100 - percentage) / 2 + '%')
 
-        $('.progress-line').css('transform', 'scale(' + percentage / 100 + ')');
+        $('.progress-line').css('transform', 'scale(' + percentage / 100 + ')')
 
-        percentage++;
+        percentage++
       } else {
-        $('.loading-screen').fadeOut(500);
+        $('.loading-screen').fadeOut(500)
         setTimeout(() => {
-          $('.loading-screen').remove();
-        }, 500);
+          $('.loading-screen').remove()
+        }, 500)
 
-        clearInterval(LoadingCounter);
+        clearInterval(LoadingCounter)
       }
-    }, 10);
+    }, 10)
 
     $('.preloader-close').on('click', function () {
-      $('.loading-screen').fadeOut(500);
+      $('.loading-screen').fadeOut(500)
       setTimeout(() => {
-        $('.loading-screen').remove();
-      }, 500);
+        $('.loading-screen').remove()
+      }, 500)
 
-      clearInterval(LoadingCounter);
-    });
+      clearInterval(LoadingCounter)
+    })
   }
 
   /*----------------- End preloader JS -----------------  */
-})(window.jQuery);
+})(window.jQuery)
