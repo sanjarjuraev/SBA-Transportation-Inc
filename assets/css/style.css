@@ -1,4 +1,6 @@
-﻿.p-top-left {
+﻿/** @format */
+
+.p-top-left {
   position: absolute;
   top: 0;
   left: 0;
@@ -3058,7 +3060,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 input[type='number'] {
-  -moz-appearance: textfield;
+  -webkit-appearance: textfield; /* Chrome, Safari, newer versions of Opera*/
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
 }
 input[type='checkbox'] {
   visibility: hidden;
