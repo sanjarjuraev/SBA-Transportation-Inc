@@ -212,10 +212,12 @@
 
         <!-- Header Search -->
         <div class="search-popup">
-          <button class="close-search style-1">
+          <button class="close-search style-1" title="Close Search">
             <i class="fa fa-times"></i>
           </button>
-          <button class="close-search"><i class="fas fa-arrow-up"></i></button>
+          <button class="close-search" title="Scroll to Top">
+            <i class="fas fa-arrow-up"></i>
+          </button>
         </div>
         <!-- End Header Search -->
 
@@ -873,6 +875,26 @@
                           rows="4"
                         ></textarea>
                       </div>
+                      <div class="form-group">
+                        <input
+                          class="remember-check"
+                          type="checkbox"
+                          id="remember-check"
+                          name="receive_sms"
+                          required
+                        />
+                        <label class="form_checkbox" for="remember-check"
+                          >By checking this box, you agree to receive SMS
+                          messages from SBA Transportation related to
+                          Appointment reminders, follow-up messages, delivery
+                          notification follow-up, and Related questions? You may
+                          reply STOP to opt-out at any time. Reply to HELP at
+                          +12402409449 for assistance.</label
+                        >
+                        <ul class="footer-nav">
+                          <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                      </div>
 
                       <div class="form-group mt-15">
                         <button
@@ -1381,6 +1403,7 @@
                             type="submit"
                             class="theme-btn"
                             data-loading-text=""
+                            title="Subscribe"
                           >
                             <i class="far fa-paper-plane"></i>
                             <span class="btn-title"></span>

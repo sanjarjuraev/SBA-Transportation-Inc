@@ -3093,7 +3093,7 @@ input[type='checkbox'] ~ label:before {
   font-weight: 700;
   position: absolute;
   left: 0px;
-  top: -1px;
+  top: 6px;
   background-color: var(--white-color);
   border: 1px solid var(--black-color);
   height: 18px;
@@ -5293,6 +5293,7 @@ a.text-theme:hover,
     position: fixed;
     left: 10px;
     top: 10px;
+    -webkit-user-select: none;
     user-select: none;
     pointer-events: none;
     visibility: hidden;
@@ -10808,6 +10809,14 @@ ul.contact-info-list li:nth-child(3) {
   position: absolute;
   left: 0;
 }
+.contact-form .form-group .checkbox-group input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 .contact-form
   .form-group
   .select2-container--default
@@ -10833,6 +10842,23 @@ ul.contact-info-list li:nth-child(3) {
   display: block;
   width: 100%;
   height: 58px;
+  padding: 10px 30px;
+  line-height: 30px;
+  font-weight: 500;
+  color: var(--body-color);
+  background-color: var(--gray-color);
+  border: 1px solid rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  border-radius: 0;
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.contact-form .form-group input[type='checkbox'] {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
   padding: 10px 30px;
   line-height: 30px;
   font-weight: 500;
@@ -12478,6 +12504,7 @@ ul.contact-info-list li:nth-child(3) {
 .contact-section .theme-btn.btn-style-2 {
   color: var(--black-color);
 }
+
 .contact-section .theme-btn.btn-style-2:hover {
   color: var(--white-color);
 }
@@ -13409,9 +13436,9 @@ ul.contact-info-list li:nth-child(3) {
   margin: 0 0 25px;
 }
 .comment-form .remember-check input[type='checkbox'] {
-  appearance: none;
-  -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   width: 16px;
   height: 16px;
   border: 1px solid var(--theme-color);
